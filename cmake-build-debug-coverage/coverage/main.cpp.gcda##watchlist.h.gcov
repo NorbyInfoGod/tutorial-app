@@ -1,0 +1,106 @@
+        -:    0:Source:C:/Users/norby/Desktop/FACULTATE/SEM 2/OOP/a6-NorbyInfoGod-1/watchlist.h
+        -:    0:Graph:C:\Users\norby\Desktop\FACULTATE\SEM 2\OOP\a6-NorbyInfoGod-1\cmake-build-debug-coverage\CMakeFiles\a6_NorbyInfoGod_1.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\norby\Desktop\FACULTATE\SEM 2\OOP\a6-NorbyInfoGod-1\cmake-build-debug-coverage\CMakeFiles\a6_NorbyInfoGod_1.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by norby on 4/25/2023.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef A6_NORBYINFOGOD_1_WATCHLIST_H
+        -:    6:#define A6_NORBYINFOGOD_1_WATCHLIST_H
+        -:    7://
+        -:    8:// Created by norby on 4/8/2023.
+        -:    9://
+        -:   10:
+        -:   11:#ifndef A45_NORBYINFOGOD_WATCHLIST_H
+        -:   12:#define A45_NORBYINFOGOD_WATCHLIST_H
+        -:   13:#include <vector>
+        -:   14:#include "tutorial.h"
+        -:   15:class Watchlist {
+        -:   16:private:
+        -:   17:     vector<Tutorial> database;
+        -:   18:public:
+function _ZN9WatchlistC1Ev called 2 returned 100% blocks executed 100%
+        2:   19:    Watchlist() = default;
+        2:   19-block  0
+call    0 returned 2
+function _ZN9Watchlist3addERK8Tutorial called 2 returned 100% blocks executed 100%
+        2:   20:    void add(const Tutorial& to_be_added)
+        -:   21:    {
+        2:   22:        this->database.push_back(to_be_added);
+        2:   22-block  0
+call    0 returned 2
+        2:   23:    }
+function _ZN9Watchlist6removeEi called 1 returned 100% blocks executed 75%
+        1:   24:    void remove(const int index)
+        -:   25:    {
+        1:   26:        this->database.erase(database.begin() + index);
+        1:   26-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   26-block  1
+    $$$$$:   26-block  2
+        1:   27:    }
+        1:   27-block  0
+function _ZN9Watchlist4listEv called 0 returned 0% blocks executed 0%
+    #####:   28:    vector<Tutorial> list()
+        -:   29:    {
+    #####:   30:        return this->database;
+    %%%%%:   30-block  0
+call    0 never executed
+        -:   31:    }
+function _ZN9Watchlist9getLengthEv called 4 returned 100% blocks executed 100%
+        4:   32:    int getLength()
+        -:   33:    {
+        4:   34:        return this->database.size();
+        4:   34-block  0
+call    0 returned 4
+        -:   35:    }
+function _ZN9Watchlist6searchERK8Tutorial called 3 returned 100% blocks executed 82%
+        3:   36:    bool search(const Tutorial& elem)
+        -:   37:    {
+       3*:   38:        for(int i=0;i<database.size();i++)
+        3:   38-block  0
+    %%%%%:   38-block  1
+        3:   38-block  2
+call    0 returned 3
+branch  1 taken 1
+branch  2 taken 2 (fallthrough)
+        1:   39:            if(elem.getLink() == database[i].getLink())
+        1:   39-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   39-block  1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0
+    $$$$$:   39-block  2
+call   10 never executed
+        1:   40:                return true;
+        1:   40-block  0
+        2:   41:        return false;
+        2:   41-block  0
+        -:   42:    }
+function _ZN9WatchlistixEi called 1 returned 100% blocks executed 100%
+        1:   43:    Tutorial& operator[](const int index)
+        -:   44:    {
+        1:   45:        return this->database[index];
+        1:   45-block  0
+call    0 returned 1
+        -:   46:    }
+        -:   47:
+        -:   48:};
+        -:   49:
+        -:   50:
+        -:   51:#endif //A45_NORBYINFOGOD_WATCHLIST_H
+        -:   52:
+        -:   53:#endif //A6_NORBYINFOGOD_1_WATCHLIST_H

@@ -1,0 +1,1106 @@
+        -:    0:Source:C:/Users/norby/Desktop/FACULTATE/SEM 2/OOP/a6-NorbyInfoGod-1/UI.h
+        -:    0:Graph:C:\Users\norby\Desktop\FACULTATE\SEM 2\OOP\a6-NorbyInfoGod-1\cmake-build-debug-coverage\CMakeFiles\a6_NorbyInfoGod_1.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\norby\Desktop\FACULTATE\SEM 2\OOP\a6-NorbyInfoGod-1\cmake-build-debug-coverage\CMakeFiles\a6_NorbyInfoGod_1.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by norby on 4/9/2023.
+        -:    3://
+        -:    4:
+        -:    5:#include "service.h"
+        -:    6:#include <iostream>
+        -:    7:#include <cstring>
+        -:    8:class User {
+        -:    9:private:
+        -:   10:    Service service;
+        -:   11:public:
+function _ZN4UserC1ERK7Service called 0 returned 0% blocks executed 0%
+    #####:   12:    User(const Service& s) : service(s)
+    %%%%%:   12-block  0
+call    0 never executed
+        -:   13:    {
+    #####:   14:        std::string user_choice;
+call    0 never executed
+        -:   15:        while(true){
+        -:   16:
+        -:   17:            std::cout << "\n\nUser menu\n"
+        -:   18:                         "1 - List all tutorials from given presenter\n"
+        -:   19:                         "2 - See watchlist\n"
+        -:   20:                         "3 - Delete from watchlist\n"
+    #####:   21:                         "> ";
+    %%%%%:   21-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   22:            std::cin >> user_choice;
+    %%%%%:   22-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   23:            std::cin.ignore();
+    %%%%%:   23-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   24:            try {
+    #####:   25:                if(service.isNumber(user_choice)) {
+    %%%%%:   25-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   25-block  1
+branch  3 never executed
+branch  4 never executed
+    #####:   26:                    switch (stoi(user_choice)) {
+    %%%%%:   26-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   26-block  1
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:   27:                        case 1:
+    #####:   28:                            list_by_presenter();
+    %%%%%:   28-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   29:                            break;
+    %%%%%:   29-block  0
+    #####:   30:                        case 2:
+    #####:   31:                            list_watchlist();
+    %%%%%:   31-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   32:                            break;
+    %%%%%:   32-block  0
+    #####:   33:                        case 3:
+    #####:   34:                            remove_watchlist();
+    %%%%%:   34-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   35:                            break;
+    %%%%%:   35-block  0
+    #####:   36:                        default:
+    #####:   37:                            throw MyException("Invalid Option\n");
+    %%%%%:   37-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   38:                    }
+        -:   39:                }
+        -:   40:                else
+    #####:   41:                    throw MyException("Invalid Option\n");
+    %%%%%:   41-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   42:            }
+    =====:   43:            catch (MyException& e)
+    $$$$$:   43-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   43-block  1
+call    2 never executed
+        -:   44:            {
+    =====:   45:                std::cout<<e.what();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    =====:   46:            }
+    $$$$$:   46-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   46-block  1
+call    3 never executed
+        -:   47:
+    #####:   48:        }
+    %%%%%:   48-block  0
+    =====:   49:    }
+    $$$$$:   49-block  0
+call    0 never executed
+    $$$$$:   49-block  1
+call    1 never executed
+        -:   50:
+function _ZN4User17list_by_presenterEv called 0 returned 0% blocks executed 0%
+    #####:   51:    void list_by_presenter()
+        -:   52:    {
+    #####:   53:        bool exists = false;
+    #####:   54:        std::string presenter;
+    %%%%%:   54-block  0
+call    0 never executed
+    #####:   55:        std::cout<<"Presenter: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   56:        getline(std::cin, presenter);
+    %%%%%:   56-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   57:        back:
+    #####:   58:        vector<Tutorial> copy(service.Repo().getLength());
+    %%%%%:   58-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   58-block  1
+    $$$$$:   58-block  2
+call    6 never executed
+function _ZZN4User17list_by_presenterEvENKUlRK8TutorialE_clES2_ called 0 returned 0% blocks executed 0%
+    #####:   59:        auto newsize = copy_if(service.Repo().list().begin(), service.Repo().list().end(), copy.begin(), [&presenter](const Tutorial& i){return i.getPresenter() == presenter;});
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   59-block  0
+call    5 never executed
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   59-block  1
+call   10 never executed
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    %%%%%:   59-block  2
+call   14 never executed
+call   15 never executed
+    $$$$$:   59-block  3
+call   16 never executed
+    $$$$$:   59-block  4
+    $$$$$:   59-block  5
+call   17 never executed
+    $$$$$:   59-block  6
+    %%%%%:   59-block  7
+call   18 never executed
+call   19 never executed
+call   20 never executed
+    #####:   60:        copy.resize(distance(copy.begin(), newsize));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   60-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:   61:        for(auto& i: service.Repo().list())
+    %%%%%:   61-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   61-block  1
+call    4 never executed
+call    5 never executed
+    %%%%%:   61-block  2
+call    6 never executed
+    %%%%%:   61-block  3
+call    7 never executed
+    %%%%%:   61-block  4
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+        -:   62:        {
+    #####:   63:                std::string choice;
+call    0 never executed
+    #####:   64:                std::cout<<i.toString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   64-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   64-block  1
+call    6 never executed
+    $$$$$:   64-block  2
+call    7 never executed
+    $$$$$:   64-block  3
+    #####:   65:                i.Watch();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   66:                std::cout<<"Like? y/n\n> ";
+    %%%%%:   66-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   67:                std::cin>>choice;
+    %%%%%:   67-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   68:                if(choice == "y")
+    %%%%%:   68-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   69:                    i.Like();
+    %%%%%:   69-block  0
+call    0 never executed
+        -:   70:                else{
+    #####:   71:                    if(choice != "n")
+    %%%%%:   71-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   72:                        throw MyException("Invalid Option");
+    %%%%%:   72-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   73:                }
+    #####:   74:                std::cout<<"Add to watchlist? y/n\n> ";
+    %%%%%:   74-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   75:                std::cin>>choice;
+    %%%%%:   75-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   76:                if(choice == "y")
+    %%%%%:   76-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   77:                    this->service.add_watchlist(i);
+    %%%%%:   77-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   78:                else{
+    #####:   79:                    if(choice != "n")
+    %%%%%:   79-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   80:                        throw MyException("Invalid Option");
+    %%%%%:   80-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   81:                }
+    #####:   82:                std::cout<<"Do you wish to stop? y/n\n> ";
+    %%%%%:   82-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   83:                std::cin>>choice;
+    %%%%%:   83-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   84:                if(choice == "y")
+    %%%%%:   84-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   85:                    goto stop;
+    %%%%%:   85-block  0
+        -:   86:                else{
+    #####:   87:                    if(choice != "n")
+    %%%%%:   87-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   88:                        throw MyException("Invalid Option");
+    %%%%%:   88-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   89:                }
+    #####:   90:                exists = true;
+    #####:   91:            }
+    %%%%%:   91-block  0
+    %%%%%:   91-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   91-block  2
+    %%%%%:   91-block  3
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   91-block  4
+call    6 never executed
+    $$$$$:   91-block  5
+call    7 never executed
+    #####:   92:        if(!exists)
+    %%%%%:   92-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   93:            throw MyException("No tutorials found");
+    %%%%%:   93-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   94:        goto back;
+    %%%%%:   94-block  0
+    #####:   95:        stop:;
+    %%%%%:   95-block  0
+    #####:   96:    }
+    %%%%%:   96-block  0
+call    0 never executed
+    $$$$$:   96-block  1
+call    1 never executed
+function _ZN4User14list_watchlistEv called 0 returned 0% blocks executed 0%
+    #####:   97:    void list_watchlist()
+        -:   98:    {
+    #####:   99:        for(auto& i : service.Watchlist().list())
+    %%%%%:   99-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   99-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   99-block  2
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    %%%%%:   99-block  3
+call    9 never executed
+    %%%%%:   99-block  4
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    $$$$$:   99-block  5
+call   13 never executed
+    $$$$$:   99-block  6
+        -:  100:        {
+    #####:  101:            std::cout<<i.toString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  101-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  101-block  1
+call    6 never executed
+call    7 never executed
+    $$$$$:  101-block  2
+call    8 never executed
+    $$$$$:  101-block  3
+    #####:  102:        }
+    %%%%%:  102-block  0
+call    0 never executed
+    $$$$$:  102-block  1
+call    1 never executed
+    #####:  103:    }
+function _ZN4User16remove_watchlistEv called 0 returned 0% blocks executed 0%
+    #####:  104:    void remove_watchlist()
+        -:  105:    {
+    #####:  106:        std::string index;
+    %%%%%:  106-block  0
+call    0 never executed
+    #####:  107:        std::cout<<"Index to remove: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  108:        std::cin>>index;
+    %%%%%:  108-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  109:        if(!this->service.isNumber(index))
+    %%%%%:  109-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  109-block  1
+branch  3 never executed
+branch  4 never executed
+        -:  110:        {
+    #####:  111:            throw MyException("Invalid index");
+    %%%%%:  111-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  112:        }
+    #####:  113:        this->service.remove_watchlist(stoi(index));
+    %%%%%:  113-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  113-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  114:    }
+    %%%%%:  114-block  0
+call    0 never executed
+    $$$$$:  114-block  1
+call    1 never executed
+        -:  115:};
+        -:  116:
+        -:  117:class Admin{
+        -:  118:private:
+        -:  119:    Service service;
+        -:  120:public:
+function _ZN5AdminC1ERK7Service called 0 returned 0% blocks executed 0%
+    #####:  121:    Admin(const Service& s) : service(s)
+    %%%%%:  121-block  0
+call    0 never executed
+        -:  122:    {
+    #####:  123:        std::string user_choice;
+call    0 never executed
+        -:  124:        while(true){
+        -:  125:
+        -:  126:            std::cout << "\n\nAdmin menu\n"
+        -:  127:                         "1 - Add new tutorial\n"
+        -:  128:                         "2 - Remove tutorial\n"
+        -:  129:                         "3 - Update tutorial\n"
+        -:  130:                         "4 - List tutorials\n"
+    #####:  131:                         "> ";
+    %%%%%:  131-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  132:            std::cin >> user_choice;
+    %%%%%:  132-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  133:            std::cin.ignore();
+    %%%%%:  133-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  134:            try {
+    #####:  135:                if(this->service.isNumber(user_choice))
+    %%%%%:  135-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  135-block  1
+branch  3 never executed
+branch  4 never executed
+        -:  136:                {
+    #####:  137:                    switch (stoi(user_choice)) {
+    %%%%%:  137-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  137-block  1
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+    #####:  138:                        case 1:
+    #####:  139:                            add();
+    %%%%%:  139-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  140:                            break;
+    %%%%%:  140-block  0
+    #####:  141:                        case 2:
+    #####:  142:                            remove();
+    %%%%%:  142-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  143:                            break;
+    %%%%%:  143-block  0
+    #####:  144:                        case 3:
+    #####:  145:                            update();
+    %%%%%:  145-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  146:                            break;
+    %%%%%:  146-block  0
+    #####:  147:                        case 4:
+    #####:  148:                            list();
+    %%%%%:  148-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  149:                            break;
+    %%%%%:  149-block  0
+    #####:  150:                        default:
+    #####:  151:                            throw MyException("Invalid Option\n");
+    %%%%%:  151-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  152:                    }
+        -:  153:                }
+        -:  154:                else
+    #####:  155:                    throw MyException("Invalid option\n");
+    %%%%%:  155-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  156:            }
+    =====:  157:            catch (MyException& e)
+    $$$$$:  157-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  157-block  1
+call    2 never executed
+        -:  158:            {
+    =====:  159:                std::cout<<e.what();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    =====:  160:            }
+    $$$$$:  160-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  160-block  1
+call    3 never executed
+        -:  161:
+    #####:  162:        }
+    %%%%%:  162-block  0
+    =====:  163:    }
+    $$$$$:  163-block  0
+call    0 never executed
+    $$$$$:  163-block  1
+call    1 never executed
+        -:  164:
+function _ZN5Admin3addEv called 0 returned 0% blocks executed 0%
+    #####:  165:    void add()
+        -:  166:    {
+    #####:  167:        std::string presenter, title, link, minutes, seconds, likes;
+    %%%%%:  167-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+    #####:  168:        std::cout<<"Presenter: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  169:        getline(std::cin, presenter);
+    %%%%%:  169-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  170:        std::cout<<"Title: ";
+    %%%%%:  170-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  171:        getline(std::cin, title);
+    %%%%%:  171-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  172:        std::cout<<"Minutes: ";
+    %%%%%:  172-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  173:        getline(std::cin, minutes);
+    %%%%%:  173-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  174:        if(!service.isNumber(minutes))
+    %%%%%:  174-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  174-block  1
+branch  3 never executed
+branch  4 never executed
+        -:  175:        {
+    #####:  176:            throw MyException("Invalid minutes");
+    %%%%%:  176-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  177:        }
+    #####:  178:        std::cout<<"Seconds: ";
+    %%%%%:  178-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  179:        getline(std::cin, seconds);
+    %%%%%:  179-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  180:
+    #####:  181:        if(!service.isNumber(seconds))
+    %%%%%:  181-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  181-block  1
+branch  3 never executed
+branch  4 never executed
+        -:  182:        {
+    #####:  183:            throw MyException("Invalid seconds");
+    %%%%%:  183-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  184:        }
+    #####:  185:        std::cout<<"Likes: ";
+    %%%%%:  185-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  186:        getline(std::cin, likes);
+    %%%%%:  186-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  187:
+    #####:  188:        if(!service.isNumber(likes))
+    %%%%%:  188-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  188-block  1
+branch  3 never executed
+branch  4 never executed
+        -:  189:        {
+    #####:  190:            throw MyException("Invalid likes");
+    %%%%%:  190-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  191:        }
+    #####:  192:        std::cout<<"Link: ";
+    %%%%%:  192-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  193:        getline(std::cin, link);
+    %%%%%:  193-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  194:        if(!service.isLink(link))
+    %%%%%:  194-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  194-block  1
+branch  3 never executed
+branch  4 never executed
+        -:  195:        {
+    #####:  196:            throw MyException("Invalid link");
+    %%%%%:  196-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  197:        }
+    #####:  198:        int i_minutes = stoi(minutes), i_seconds = stoi(seconds), i_likes = stoi(likes);
+    %%%%%:  198-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  198-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  198-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  199:        Tutorial new_elem(presenter, title, i_minutes, i_seconds,i_likes, link);
+    %%%%%:  199-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  200:        this->service.add_repository(new_elem);
+    %%%%%:  200-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  201:    }
+    %%%%%:  201-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+    $$$$$:  201-block  1
+call    7 never executed
+    $$$$$:  201-block  2
+call    8 never executed
+    $$$$$:  201-block  3
+call    9 never executed
+    $$$$$:  201-block  4
+call   10 never executed
+    $$$$$:  201-block  5
+call   11 never executed
+    $$$$$:  201-block  6
+call   12 never executed
+    $$$$$:  201-block  7
+call   13 never executed
+function _ZN5Admin6removeEv called 0 returned 0% blocks executed 0%
+    #####:  202:    void remove()
+        -:  203:    {
+    #####:  204:        std::string index;
+    %%%%%:  204-block  0
+call    0 never executed
+    #####:  205:        std::cout<<"Index to remove: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  206:        std::cin>>index;
+    %%%%%:  206-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  207:        if(!this->service.isNumber(index))
+    %%%%%:  207-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  207-block  1
+branch  3 never executed
+branch  4 never executed
+        -:  208:        {
+    #####:  209:            throw MyException("Invalid index");
+    %%%%%:  209-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  210:        }
+    #####:  211:        this->service.remove_repository(stoi(index));
+    %%%%%:  211-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  211-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  212:    }
+    %%%%%:  212-block  0
+call    0 never executed
+    $$$$$:  212-block  1
+call    1 never executed
+function _ZN5Admin6updateEv called 0 returned 0% blocks executed 0%
+    #####:  213:    void update()
+        -:  214:    {
+    #####:  215:        std::string index;
+    %%%%%:  215-block  0
+call    0 never executed
+    #####:  216:        std::cout<<"Index to update: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  217:        std::cin>>index;
+    %%%%%:  217-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  218:        std::cin.ignore();
+    %%%%%:  218-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  219:        if(!this->service.isNumber(index))
+    %%%%%:  219-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  219-block  1
+branch  3 never executed
+branch  4 never executed
+        -:  220:        {
+    #####:  221:            throw MyException("Invalid index");
+    %%%%%:  221-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  222:        }
+        -:  223:        else
+        -:  224:        {
+    #####:  225:            if(stoi(index)>=this->service.Repo().getLength() || stoi(index)<0)
+    %%%%%:  225-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  225-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  225-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  225-block  3
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  225-block  4
+    %%%%%:  225-block  5
+    %%%%%:  225-block  6
+branch 12 never executed
+branch 13 never executed
+    #####:  226:                throw MyException("Invalid index");
+    %%%%%:  226-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  227:        }
+    #####:  228:        std::string presenter, title, link, minutes, seconds, likes;
+    %%%%%:  228-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+    #####:  229:        std::cout<<"Presenter: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  230:        getline(std::cin, presenter);
+    %%%%%:  230-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  231:        std::cout<<"Title: ";
+    %%%%%:  231-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  232:        getline(std::cin, title);
+    %%%%%:  232-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  233:        std::cout<<"Minutes: ";
+    %%%%%:  233-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  234:        getline(std::cin, minutes);
+    %%%%%:  234-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  235:        if(!service.isNumber(minutes))
+    %%%%%:  235-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  235-block  1
+branch  3 never executed
+branch  4 never executed
+        -:  236:        {
+    #####:  237:            throw MyException("Invalid minutes");
+    %%%%%:  237-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  238:        }
+    #####:  239:        std::cout<<"Seconds: ";
+    %%%%%:  239-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  240:        getline(std::cin, seconds);
+    %%%%%:  240-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  241:
+    #####:  242:        if(!service.isNumber(seconds))
+    %%%%%:  242-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  242-block  1
+branch  3 never executed
+branch  4 never executed
+        -:  243:        {
+    #####:  244:            throw MyException("Invalid seconds");
+    %%%%%:  244-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  245:        }
+    #####:  246:        std::cout<<"Likes: ";
+    %%%%%:  246-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  247:        getline(std::cin, likes);
+    %%%%%:  247-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  248:
+    #####:  249:        if(!service.isNumber(likes))
+    %%%%%:  249-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  249-block  1
+branch  3 never executed
+branch  4 never executed
+        -:  250:        {
+    #####:  251:            throw MyException("Invalid likes");
+    %%%%%:  251-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  252:        }
+    #####:  253:        std::cout<<"Link: ";
+    %%%%%:  253-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  254:        getline(std::cin, link);
+    %%%%%:  254-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  255:        if(!service.isLink(link))
+    %%%%%:  255-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  255-block  1
+branch  3 never executed
+branch  4 never executed
+        -:  256:        {
+    #####:  257:            throw MyException("Invalid link");
+    %%%%%:  257-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  258:        }
+    #####:  259:        int i_minutes = stoi(minutes), i_seconds = stoi(seconds), i_likes = stoi(likes);
+    %%%%%:  259-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  259-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  259-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  260:        this->service.update_repository(stoi(index), presenter, title, i_minutes, i_seconds, i_likes, link);
+    %%%%%:  260-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  260-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  260-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  260-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  260-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  260-block  5
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    $$$$$:  260-block  6
+call   18 never executed
+    $$$$$:  260-block  7
+    $$$$$:  260-block  8
+call   19 never executed
+    $$$$$:  260-block  9
+    $$$$$:  260-block 10
+call   20 never executed
+    $$$$$:  260-block 11
+    #####:  261:    }
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+    $$$$$:  261-block  0
+call    7 never executed
+    $$$$$:  261-block  1
+call    8 never executed
+    $$$$$:  261-block  2
+call    9 never executed
+    $$$$$:  261-block  3
+call   10 never executed
+    $$$$$:  261-block  4
+call   11 never executed
+    $$$$$:  261-block  5
+call   12 never executed
+    $$$$$:  261-block  6
+call   13 never executed
+function _ZN5Admin4listEv called 0 returned 0% blocks executed 0%
+    #####:  262:    void list()
+        -:  263:    {
+    #####:  264:        for(auto& i : service.Repo().list())
+    %%%%%:  264-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  264-block  1
+call    4 never executed
+call    5 never executed
+    %%%%%:  264-block  2
+call    6 never executed
+    %%%%%:  264-block  3
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        -:  265:        {
+    #####:  266:            std::cout<<i.toString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  266-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  266-block  1
+call    6 never executed
+call    7 never executed
+    $$$$$:  266-block  2
+call    8 never executed
+    $$$$$:  266-block  3
+    #####:  267:        }
+    %%%%%:  267-block  0
+call    0 never executed
+    $$$$$:  267-block  1
+call    1 never executed
+    #####:  268:    }
+        -:  269:};
+        -:  270:

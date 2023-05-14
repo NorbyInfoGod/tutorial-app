@@ -1,0 +1,125 @@
+        -:    0:Source:C:/Users/norby/Desktop/FACULTATE/SEM 2/OOP/a6-NorbyInfoGod-1/repository.h
+        -:    0:Graph:C:\Users\norby\Desktop\FACULTATE\SEM 2\OOP\a6-NorbyInfoGod-1\cmake-build-debug-coverage\CMakeFiles\a6_NorbyInfoGod_1.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\norby\Desktop\FACULTATE\SEM 2\OOP\a6-NorbyInfoGod-1\cmake-build-debug-coverage\CMakeFiles\a6_NorbyInfoGod_1.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by norby on 4/25/2023.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef A6_NORBYINFOGOD_1_REPOSITORY_H
+        -:    6:#define A6_NORBYINFOGOD_1_REPOSITORY_H
+        -:    7:
+        -:    8:#include "tutorial.h"
+        -:    9:class Repository{
+        -:   10:private:
+        -:   11:    vector<Tutorial> elements;
+        -:   12:public:
+function _ZN10RepositoryC1Ev called 2 returned 100% blocks executed 100%
+        2:   13:    Repository() = default;;
+        2:   13-block  0
+call    0 returned 2
+function _ZN10Repository3addERK8Tutorial called 21 returned 100% blocks executed 100%
+       21:   14:    void add(const Tutorial& t)
+        -:   15:    {
+       21:   16:        elements.push_back(t);
+       21:   16-block  0
+call    0 returned 21
+       21:   17:    }
+function _ZN10Repository6removeEi called 1 returned 100% blocks executed 75%
+        1:   18:    void remove(int index)
+        -:   19:    {
+        1:   20:        elements.erase(elements.begin()+index);
+        1:   20-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   20-block  1
+    $$$$$:   20-block  2
+        1:   21:    }
+        1:   21-block  0
+function _ZN10Repository4listEv called 0 returned 0% blocks executed 0%
+    #####:   22:    vector<Tutorial> list()
+        -:   23:    {
+    #####:   24:        return elements;
+    %%%%%:   24-block  0
+call    0 never executed
+        -:   25:    }
+function _ZN10Repository6updateEiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iiiS5_ called 1 returned 100% blocks executed 100%
+        1:   26:    void update(int index, string presenter, string title, int minutes, int seconds, int likes, string link)
+        -:   27:    {
+        1:   28:        elements[index].setTitle(title);
+        1:   28-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   29:        elements[index].setPresenter(presenter);
+call    0 returned 1
+call    1 returned 1
+        1:   30:        elements[index].setMinutes(minutes);
+call    0 returned 1
+call    1 returned 1
+        1:   31:        elements[index].setSeconds(seconds);
+call    0 returned 1
+call    1 returned 1
+        1:   32:        elements[index].setLikes(likes);
+call    0 returned 1
+call    1 returned 1
+        1:   33:        elements[index].setLink(link);
+call    0 returned 1
+call    1 returned 1
+        1:   34:    }
+function _ZN10RepositoryixEi called 5 returned 100% blocks executed 100%
+        5:   35:    Tutorial& operator[](const int index)
+        -:   36:    {
+        5:   37:        return elements[index];
+        5:   37-block  0
+call    0 returned 5
+        -:   38:    }
+        -:   39:
+function _ZN10Repository9getLengthEv called 4 returned 100% blocks executed 100%
+        4:   40:    int getLength() {
+        4:   41:        return elements.size();
+        4:   41-block  0
+call    0 returned 4
+        -:   42:    }
+function _ZN10Repository6searchERK8Tutorial called 3 returned 100% blocks executed 84%
+        3:   43:    bool search(const Tutorial& elem)
+        -:   44:    {
+       21:   45:        for(auto& i : elements)
+        3:   45-block  0
+call    0 returned 3
+call    1 returned 3
+       19:   45-block  1
+call    2 returned 19
+       18:   45-block  2
+call    3 returned 18
+       21:   45-block  3
+call    4 returned 21
+branch  5 taken 19
+branch  6 taken 2 (fallthrough)
+       19:   46:            if(elem.getLink() == i.getLink())
+call    0 returned 19
+branch  1 taken 19 (fallthrough)
+branch  2 taken 0 (throw)
+       19:   46-block  0
+call    3 returned 19
+branch  4 taken 19 (fallthrough)
+branch  5 taken 0 (throw)
+       19:   46-block  1
+call    6 returned 19
+call    7 returned 19
+call    8 returned 19
+branch  9 taken 1 (fallthrough)
+branch 10 taken 18
+    $$$$$:   46-block  2
+call   11 never executed
+    $$$$$:   46-block  3
+        1:   47:                return true;
+        1:   47-block  0
+        2:   48:        return false;
+        2:   48-block  0
+        -:   49:    }
+        -:   50:};
+        -:   51:#endif //A6_NORBYINFOGOD_1_REPOSITORY_H
